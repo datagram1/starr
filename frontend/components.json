@@ -12,6 +12,13 @@
   },
   "aliases": {
     "components": "@/components",
+<<<<<<< HEAD
     "utils": "@/lib/utils"
+=======
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+>>>>>>> origin/claude/form-components-01PbnK48ocjUR4FNaZrCFh48
   }
 }

@@ -49,6 +49,35 @@ update.requirements = .hooks/update_requirements
 
 On `hg update`, the first hook will automatically create symlinks for modules and the second hook will automatically generate requirements files.
 
+## Frontend Development
+
+The new React-based frontend is located in the `frontend/` directory. This is a modern rewrite of the SAO (Tryton web client) using React, TypeScript, Vite, Tailwind CSS, and shadcn/ui components.
+
+**Quick Start:**
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The development server will start at http://localhost:3000. See [frontend/README.md](frontend/README.md) for detailed documentation, including:
+- Project structure and architecture
+- Available npm scripts
+- Path aliases configuration
+- Environment variables setup
+- Migration roadmap and progress
+
+**Tech Stack:**
+- React 19+ with TypeScript
+- Vite for fast development and building
+- Tailwind CSS for styling (to be added)
+- shadcn/ui component library (to be added)
+- React Query for data fetching (to be added)
+- Zustand for state management (to be added)
+
+This frontend is being built alongside the existing SAO client to allow for gradual migration and thorough testing before switching over.
+
 ## Contributing
 
 For information about the upstream Tryton project and how to contribute to it, please visit the [Tryton development guidelines](https://www.tryton.org/develop).

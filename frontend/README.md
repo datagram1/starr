@@ -1,73 +1,102 @@
-# React + TypeScript + Vite
+# Starr Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React frontend for Starr ERP (Tryton fork) built with React, TypeScript, Tailwind CSS, and shadcn/ui.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19+** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS (to be added)
+- **shadcn/ui** - Component library (to be added)
+- **React Query** - Data fetching (to be added)
+- **Zustand** - State management (to be added)
+- **React Router** - Routing (to be added)
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+frontend/
+├── src/
+│   ├── api/          # API client and endpoints
+│   ├── components/   # React components
+│   ├── hooks/        # Custom React hooks
+│   ├── lib/          # Utility libraries
+│   ├── stores/       # Zustand stores
+│   ├── types/        # TypeScript type definitions
+│   └── utils/        # Utility functions
+├── public/           # Static assets
+└── ...config files
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Development
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Starts the development server at `http://localhost:3000`
+
+### Build
+
+```bash
+npm run build
+```
+
+Creates an optimized production build
+
+### Preview
+
+```bash
+npm run preview
+```
+
+Preview the production build locally
+
+### Linting
+
+```bash
+npm run lint
+```
+
+Run ESLint to check code quality
+
+### Format
+
+```bash
+npm run format
+```
+
+Format code with Prettier
+
+## Path Aliases
+
+The project uses path aliases for cleaner imports:
+
+- `@/*` - `./src/*`
+- `@/components/*` - `./src/components/*`
+- `@/lib/*` - `./src/lib/*`
+- `@/hooks/*` - `./src/hooks/*`
+- `@/utils/*` - `./src/utils/*`
+- `@/stores/*` - `./src/stores/*`
+- `@/types/*` - `./src/types/*`
+- `@/api/*` - `./src/api/*`
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and configure:
+
+```bash
+cp .env.example .env
+```
+
+Available variables:
+- `VITE_API_URL` - Backend API URL
+- `VITE_APP_TITLE` - Application title
+- `VITE_APP_VERSION` - Application version
+
+## Migration Status
+
+This is a gradual migration from the existing jQuery-based SAO client. See `todo/frontend_tasks.md` for the complete migration plan and progress.

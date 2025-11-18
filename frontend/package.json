@@ -1,14 +1,16 @@
 {
-  "name": "frontend",
+  "name": "starr-frontend",
   "private": true,
   "version": "0.0.0",
+  "description": "Modern React frontend for Starr ERP (Tryton fork)",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "dependencies": {
     "react": "^19.2.0",
